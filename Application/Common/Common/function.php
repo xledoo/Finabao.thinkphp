@@ -47,6 +47,10 @@ function authcode($string, $operation, $key = '') {
 }
 
 
+function loaducenter() {
+	require_once APP_PATH.'./Common/Conf/config_ucenter.php';
+	require_once APP_PATH.'./uc_client/client.php';
+}
 
 function daddslashes($string, $force = 0) {
 	!defined('MAGIC_QUOTES_GPC') && define('MAGIC_QUOTES_GPC', get_magic_quotes_gpc());

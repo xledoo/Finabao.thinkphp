@@ -4,7 +4,7 @@
 define('UC_CONNECT', 'mysql');
 define('UC_DBHOST', 'localhost');
 define('UC_DBUSER', 'ucenter');
-define('UC_DBPW', '123456');
+define('UC_DBPW', '9527');
 define('UC_DBNAME', 'ucenter');
 define('UC_DBCHARSET', 'utf8');
 define('UC_DBTABLEPRE', '`ucenter`.uc_');

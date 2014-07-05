@@ -25,28 +25,7 @@
 
 <!-- BEGIN BODY -->
 <body>
-    <!-- BEGIN STYLE CUSTOMIZER -->
-    <div class="color-panel hidden-sm">
-        <div class="color-mode-icons icon-color"></div>
-        <div class="color-mode-icons icon-color-close"></div>
-        <div class="color-mode">
-            <p>THEME COLOR</p>
-            <ul class="inline">
-                <li class="color-blue current color-default" data-style="blue"></li>
-                <li class="color-red" data-style="red"></li>
-                <li class="color-green" data-style="green"></li>
-                <li class="color-orange" data-style="orange"></li>
-            </ul>
-            <label>
-                <span>Header</span>
-                <select class="header-option form-control input-small">
-                    <option value="default" selected>Default</option>
-                    <option value="fixed">Fixed</option>
-                </select>
-            </label>
-        </div>
-    </div>
-    <!-- END BEGIN STYLE CUSTOMIZER -->   
+     
 
     <!-- BEGIN HEADER -->
     <div class="header navbar navbar-default navbar-static-top">
@@ -56,16 +35,16 @@
                 <div class="row">
                     <div class="col-md-9 col-sm-9">
                         <ul class="list-unstyle inline">
-                            <li><i class="fa fa-phone topbar-info-icon top-2"></i>Call us: <span>(1) 456 6717</span></li>
+                            <li><i class="fa fa-phone topbar-info-icon top-2"></i>联系我们: <span>(+0874) 333 7898</span></li>
                             <li class="sep"><span>|</span></li>
-                            <li><i class="fa fa-envelope-o topbar-info-icon top-2"></i>Email: <span>info@keenthemes.com</span></li>
+                            <li><i class="fa fa-envelope-o topbar-info-icon top-2"></i>邮箱: <span>xledoo@finabao.com</span></li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-3 login-reg-links">
                         <ul class="list-unstyled inline">
-                            <li><a href="<?php echo U('Member/Login/Index');?>">会员登录</a></li>
+                            <li><a href="<?php echo U('Member/Login/index');?>">登录</a></li>
                             <li class="sep"><span>|</span></li>
-                            <li><a href="<?php echo U('Member/Register/Index');?>">注册新账号</a></li>
+                            <li><a href="<?php echo U('Member/Register/index');?>">注册</a></li>
                         </ul>
                     </div>
                 </div>
@@ -93,7 +72,7 @@
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">
-                            Home
+                            首页
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -238,7 +217,98 @@
         </div>
     </div>
     <!-- END HEADER -->
-asdfsdf
+        <!-- BEGIN BREADCRUMBS -->   
+        <div class="row breadcrumbs margin-bottom-40">
+            <div class="container">
+                <div class="col-md-4 col-sm-4">
+                    <h1>Register 会员注册</h1>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    <ul class="pull-right breadcrumb">
+                        <li><a href="<?php echo U('Home/Index/Index');?>">首页</a></li>
+                        <li><a href="<?php echo U('Member/Index/Index');?>">会员中心</a></li>
+                        <li class="active">会员注册</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END BREADCRUMBS -->
+
+
+<!-- BEGIN CONTAINER -->   
+        <div class="container margin-bottom-40">
+          <div class="row" style="width:800px;float:right">
+            <form action="#" class="form-horizontal">
+                <div class="form-body">
+                <h1 class="form-section">注册</h1>
+                                                <!--/row-->
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="input-group margin-bottom-20">
+                                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                            <input type="text" class="form-control" placeholder="用户名" name="username">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="input-group margin-bottom-20">
+                                                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                                            <input type="text" class="form-control" placeholder="邮箱" name="email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="input-group margin-bottom-20">
+                                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                                            <input type="password" class="form-control" placeholder="密码" name="password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="input-group margin-bottom-20">
+                                                            <span class="input-group-addon"><i class="fa fa-apple"></i></span>
+                                                            <input type="text" class="form-control" placeholder="手机" name="mobile">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                    <!--/span-->
+                                                </div>
+                                                <!--/row-->
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="input-group margin-bottom-20">
+                                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                                            <input type="password" class="form-control" placeholder="确认密码" name="password2">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="input-group margin-bottom-20">
+                                                            <span class="input-group-addon"><i class="fa fa-android"></i></span>
+                                                            <input type="text" class="form-control" placeholder="手机验证码" name="mobilecode">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/row-->
+                                            </div>
+                                            <div class="form-actions fluid">
+                                                <div class="row">
+                                                    <div class="col-md-6" style="float:right">
+                                                        <div class="col-md-offset-3 col-md-9">
+                                                            <button type="submit" class="btn green">注册</button>
+                                                            <button type="button" class="btn default">取消</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                    </div>
+                                                </div>
+                                            </div>                       
+            </form>
+            
+          </div>
+        </div>
+        <!-- END CONTAINER -->
+
+  </div>
+    <!-- END PAGE CONTAINER -->
 
 
     <!-- BEGIN FOOTER -->
@@ -272,7 +342,7 @@ asdfsdf
                 </div>
                 <div class="col-md-4 col-sm-4 space-mobile">
                     <!-- BEGIN CONTACTS -->                                    
-                    <h2>Contact Us</h2>
+                    <h2>联系我们</h2>
                     <address class="margin-bottom-40">
                         Loop, Inc. <br />
                         795 Park Ave, Suite 120 <br />
@@ -344,7 +414,7 @@ asdfsdf
             <div class="row">
                 <div class="col-md-8 col-sm-8">
                     <p>
-                        <span class="margin-right-10">2013 © Metronic. ALL Rights Reserved.</span> 
+                        <span class="margin-right-10">2013 © Finabao. ALL Rights Reserved.</span> 
                         <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
                     </p>
                 </div>

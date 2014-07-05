@@ -13,6 +13,8 @@
 <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN THEME STYLES --> 
+<link href="assets/css/themes/login.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/themes/login-soft.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/themes/blue.css" rel="stylesheet" type="text/css" id="style_color"/>

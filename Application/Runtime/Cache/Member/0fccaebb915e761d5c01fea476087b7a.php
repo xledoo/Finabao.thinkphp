@@ -21,61 +21,87 @@
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico" />
 </head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
 <body>
+    <!-- BEGIN STYLE CUSTOMIZER -->
+    <div class="color-panel hidden-sm">
+        <div class="color-mode-icons icon-color"></div>
+        <div class="color-mode-icons icon-color-close"></div>
+        <div class="color-mode">
+            <p>THEME COLOR</p>
+            <ul class="inline">
+                <li class="color-blue current color-default" data-style="blue"></li>
+                <li class="color-red" data-style="red"></li>
+                <li class="color-green" data-style="green"></li>
+                <li class="color-orange" data-style="orange"></li>
+            </ul>
+            <label>
+                <span>Header</span>
+                <select class="header-option form-control input-small">
+                    <option value="default" selected>Default</option>
+                    <option value="fixed">Fixed</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <!-- END BEGIN STYLE CUSTOMIZER -->   
+
     <!-- BEGIN HEADER -->
     <div class="header navbar navbar-default navbar-static-top">
-         <!-- BEGIN TOP BAR -->
+        <!-- BEGIN TOP BAR -->
         <div class="front-topbar">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9 col-sm-9">
-                        <ul class="list-unstyled inline">
-                            <li><i class="fa fa-phone topbar-info-icon top-2"></i>Call us: <span>(0874) 333 7898</span></li>
+                        <ul class="list-unstyle inline">
+                            <li><i class="fa fa-phone topbar-info-icon top-2"></i>Call us: <span>(1) 456 6717</span></li>
                             <li class="sep"><span>|</span></li>
-                            <li><i class="fa fa-envelope-o topbar-info-icon top-2"></i>Email: <span>service@finabao.com</span></li>
+                            <li><i class="fa fa-envelope-o topbar-info-icon top-2"></i>Email: <span>info@keenthemes.com</span></li>
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-3 login-reg-links">
                         <ul class="list-unstyled inline">
                             <li><a href="<?php echo U('Member/Login/Index');?>">会员登录</a></li>
                             <li class="sep"><span>|</span></li>
-                            <li><a href="<?php echo U('Member/Register/Index');?>">注册账号</a></li>
+                            <li><a href="<?php echo U('Member/Register/Index');?>">注册新账号</a></li>
                         </ul>
                     </div>
                 </div>
             </div>        
         </div>
         <!-- END TOP BAR -->
-		<div class="container">
-			<div class="navbar-header">
-				<!-- BEGIN RESPONSIVE MENU TOGGLER -->
-				<button class="navbar-toggle btn navbar-btn" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<!-- END RESPONSIVE MENU TOGGLER -->
-				<!-- BEGIN LOGO (you can use logo image instead of text)-->
-				<a class="navbar-brand logo-v1" href="index.html">
-					<img src="assets/img/logo_blue.png" id="logoimg" alt="">
-				</a>
-				<!-- END LOGO -->
-			</div>
-		
-			<!-- BEGIN TOP NAVIGATION MENU -->
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li class="dropdown active">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <button class="navbar-toggle btn navbar-btn" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN LOGO (you can use logo image instead of text)-->
+                <a class="navbar-brand logo-v1" href="index.html">
+                    <img src="assets/img/logo_blue.png" id="logoimg" alt="">
+                </a>
+                <!-- END LOGO -->
+            </div>
+        
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">
-                        	首页
-                        	<i class="fa fa-angle-down"></i>
+                            Home
+                            <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                        	<li class="active"><a href="index.html">Home Default</a></li>
+                            <li><a href="index.html">Home Default</a></li>
                             <li><a href="page_home_fixed_header.html">Header Fixed</a></li>
-                        	<li><a href="page_home2.html">Home with Top Bar</a></li>
+                            <li><a href="page_home2.html">Home with Top Bar</a></li>
                         </ul>
-					</li>
+                    </li>
                     <li class="dropdown">
                       <a class="dropdown-toggle" data-toggle="dropdown" data-delay="0" data-close-others="false" data-target="#" href="#">
                         Mega Menu 
@@ -136,7 +162,7 @@
                       </ul>
                       <!-- END DROPDOWN MENU -->
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown active">
                             <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">
                             Pages
                             <i class="fa fa-angle-down"></i>
@@ -150,48 +176,48 @@
                             <li><a href="page_search_result.html">Search Result</a></li>
                             <li><a href="page_404.html">404</a></li>
                             <li><a href="page_500.html">500</a></li>
-                            <li><a href="page_login.html">Login Page</a></li>
+                            <li class="active"><a href="page_login.html">Login Page</a></li>
                             <li><a href="page_signup.html">Signup Page</a></li>
                             <li><a href="page_careers.html">Careers</a></li>
                             <li><a href="page_contacts.html">Contact</a></li>
                         </ul>
                     </li>
-					<li class="dropdown">
+                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">
-                        	Features
-                        	<i class="fa fa-angle-down"></i>
+                            Features
+                            <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                        	<li><a href="feature_typography.html">Typography</a></li>
-                        	<li><a href="feature_buttons.html">Buttons</a></li>
-                        	<li><a href="feature_forms.html">Forms</a></li>
-                        	<li><a href="feature_icons.html">Icons</a></li>
+                            <li><a href="feature_typography.html">Typography</a></li>
+                            <li><a href="feature_buttons.html">Buttons</a></li>
+                            <li><a href="feature_forms.html">Forms</a></li>
+                            <li><a href="feature_icons.html">Icons</a></li>
                         </ul>
-					</li>                        
-					<li class="dropdown">
+                    </li>                        
+                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">
-                        	Portfolio
-                        	<i class="fa fa-angle-down"></i>
+                            Portfolio
+                            <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                        	<li><a href="portfolio_4.html">Portfolio 4</a></li>
-                        	<li><a href="portfolio_3.html">Portfolio 3</a></li>
-                        	<li><a href="portfolio_2.html">Portfolio 2</a></li>
-                        	<li><a href="portfolio_item.html">Portfolio Item</a></li>
+                            <li><a href="portfolio_4.html">Portfolio 4</a></li>
+                            <li><a href="portfolio_3.html">Portfolio 3</a></li>
+                            <li><a href="portfolio_2.html">Portfolio 2</a></li>
+                            <li><a href="portfolio_item.html">Portfolio Item</a></li>
                         </ul>
-					</li>
-					<li class="dropdown">
+                    </li>
+                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">
-                        	Blog
-                        	<i class="fa fa-angle-down"></i>
+                            Blog
+                            <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                        	<li><a href="blog.html">Blog Page</a></li>
-                        	<li><a href="blog_item.html">Blog Item</a></li>
+                            <li><a href="blog.html">Blog Page</a></li>
+                            <li><a href="blog_item.html">Blog Item</a></li>
                         </ul>
-					</li>					
+                    </li>
                     <li><a href="http://www.keenthemes.com/preview/index.php?theme=metronic_admin&page=index.html" target="_blank">Admin Theme</a></li>
-					<li class="menu-search">
+                    <li class="menu-search">
                         <span class="sep"></span>
                         <i class="fa fa-search search-btn"></i>
 
@@ -205,27 +231,15 @@
                                 </div>
                             </form>
                         </div> 
-					</li>
-				</ul>                           
-			</div>
-			<!-- BEGIN TOP NAVIGATION MENU -->
-		</div>
-    </div>
-    <!-- END HEADER --> 
-    <!-- BEGIN REVOLUTION SLIDER -->
-    <div class="fullwidthbanner-container slider-main margin-bottom-10">
-        <div class="fullwidthabnner">
-            <div class="tp-bannertimer tp-bottom"></div>
+                    </li>
+                </ul>                         
+            </div>
+            <!-- BEGIN TOP NAVIGATION MENU -->
         </div>
     </div>
-    <!-- END REVOLUTION SLIDER -->
-
-    <!-- BEGIN CONTAINER -->   
-    <div class="container">
-
+    <!-- END HEADER -->
 asdfsdf
-    </div> </div>
-    <!-- END CONTAINER -->
+
 
     <!-- BEGIN FOOTER -->
     <div class="footer">

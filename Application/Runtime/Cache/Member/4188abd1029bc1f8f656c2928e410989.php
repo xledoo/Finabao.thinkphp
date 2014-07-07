@@ -13,11 +13,8 @@
 <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN THEME STYLES --> 
-<<<<<<< HEAD
 <link href="assets/css/themes/login.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/themes/login-soft.css" rel="stylesheet" type="text/css"/>
-=======
->>>>>>> 93e80e4ea342a78e710558c04de9bedb0703267f
 <link href="assets/css/style-metronic.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/themes/blue.css" rel="stylesheet" type="text/css" id="style_color"/>
@@ -30,32 +27,7 @@
 
 <!-- BEGIN BODY -->
 <body>
-<<<<<<< HEAD
-    <!-- BEGIN STYLE CUSTOMIZER -->
-    <div class="color-panel hidden-sm">
-        <div class="color-mode-icons icon-color"></div>
-        <div class="color-mode-icons icon-color-close"></div>
-        <div class="color-mode">
-            <p>THEME COLOR</p>
-            <ul class="inline">
-                <li class="color-blue current color-default" data-style="blue"></li>
-                <li class="color-red" data-style="red"></li>
-                <li class="color-green" data-style="green"></li>
-                <li class="color-orange" data-style="orange"></li>
-            </ul>
-            <label>
-                <span>Header</span>
-                <select class="header-option form-control input-small">
-                    <option value="default" selected>Default</option>
-                    <option value="fixed">Fixed</option>
-                </select>
-            </label>
-        </div>
-    </div>
-    <!-- END BEGIN STYLE CUSTOMIZER -->   
-=======
      
->>>>>>> 93e80e4ea342a78e710558c04de9bedb0703267f
 
     <!-- BEGIN HEADER -->
     <div class="header navbar navbar-default navbar-static-top">
@@ -65,28 +37,16 @@
                 <div class="row">
                     <div class="col-md-9 col-sm-9">
                         <ul class="list-unstyle inline">
-<<<<<<< HEAD
-                            <li><i class="fa fa-phone topbar-info-icon top-2"></i>Call us: <span>(1) 456 6717</span></li>
-                            <li class="sep"><span>|</span></li>
-                            <li><i class="fa fa-envelope-o topbar-info-icon top-2"></i>Email: <span>info@keenthemes.com</span></li>
-=======
                             <li><i class="fa fa-phone topbar-info-icon top-2"></i>联系我们: <span>(+0874) 333 7898</span></li>
                             <li class="sep"><span>|</span></li>
                             <li><i class="fa fa-envelope-o topbar-info-icon top-2"></i>邮箱: <span>xledoo@finabao.com</span></li>
->>>>>>> 93e80e4ea342a78e710558c04de9bedb0703267f
                         </ul>
                     </div>
                     <div class="col-md-3 col-sm-3 login-reg-links">
                         <ul class="list-unstyled inline">
-<<<<<<< HEAD
-                            <li><a href="<?php echo U('Member/Login/Index');?>">会员登录</a></li>
-                            <li class="sep"><span>|</span></li>
-                            <li><a href="<?php echo U('Member/Register/Index');?>">注册新账号</a></li>
-=======
                             <li><a href="<?php echo U('Member/Login/index');?>">登录</a></li>
                             <li class="sep"><span>|</span></li>
                             <li><a href="<?php echo U('Member/Register/index');?>">注册</a></li>
->>>>>>> 93e80e4ea342a78e710558c04de9bedb0703267f
                         </ul>
                     </div>
                 </div>
@@ -114,11 +74,7 @@
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">
-<<<<<<< HEAD
-                            Home
-=======
                             首页
->>>>>>> 93e80e4ea342a78e710558c04de9bedb0703267f
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">
@@ -264,20 +220,13 @@
     </div>
     <!-- END HEADER -->
    <!-- BEGIN PAGE LEVEL PLUGIN STYLES --> 
-<<<<<<< HEAD
    <link href="assets/css/themes/login.css" rel="stylesheet" type="text/css"/>
    <link href="assets/css/themes/login-soft.css" rel="stylesheet" type="text/css"/>
-=======
->>>>>>> 93e80e4ea342a78e710558c04de9bedb0703267f
    <link href="assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" /> 
    <link href="assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>              
    <!-- END PAGE LEVEL PLUGIN STYLES -->
         <!-- BEGIN BREADCRUMBS -->   
-<<<<<<< HEAD
 <div class="row breadcrumbs margin-bottom-10">
-=======
-        <div class="row breadcrumbs margin-bottom-40">
->>>>>>> 93e80e4ea342a78e710558c04de9bedb0703267f
             <div class="container">
                 <div class="col-md-4 col-sm-4">
                     <h1>Login 会员登录</h1>
@@ -290,7 +239,6 @@
                     </ul>
                 </div>
             </div>
-<<<<<<< HEAD
 </div>
         <!-- END BREADCRUMBS -->
     <!-- BEGIN CONTAINER -->   
@@ -305,7 +253,7 @@
         <div class="content">
             <!-- BEGIN LOGIN FORM -->
             <form class="login-form" action="index.html" method="post">
-                <h3 class="form-title">登录</h3>
+                <h3 class="form-title">会员登录</h3>
                <!-- <div class="alert alert-danger display-hide">
                     <button class="close" data-close="alert"></button>
                     <span>
@@ -374,7 +322,7 @@
                 
                 <div class="create-account">
                     <p>
-                         还没有注册 ?&nbsp;
+                         还没有账号 ?&nbsp;
                         <a href="javascript:;" id="register-btn">
                              注册用户
                         </a>
@@ -388,17 +336,6 @@
 
 
 
-=======
-        </div>
-        <!-- END BREADCRUMBS -->
-    <!-- BEGIN CONTAINER -->   
-    <div class="container">
-
-    </div>
-    <!-- END CONTAINER -->
-
-
->>>>>>> 93e80e4ea342a78e710558c04de9bedb0703267f
     <!-- BEGIN FOOTER -->
     <div class="footer">
         <div class="container">
@@ -430,11 +367,7 @@
                 </div>
                 <div class="col-md-4 col-sm-4 space-mobile">
                     <!-- BEGIN CONTACTS -->                                    
-<<<<<<< HEAD
-                    <h2>Contact Us</h2>
-=======
                     <h2>联系我们</h2>
->>>>>>> 93e80e4ea342a78e710558c04de9bedb0703267f
                     <address class="margin-bottom-40">
                         Loop, Inc. <br />
                         795 Park Ave, Suite 120 <br />
@@ -506,11 +439,7 @@
             <div class="row">
                 <div class="col-md-8 col-sm-8">
                     <p>
-<<<<<<< HEAD
-                        <span class="margin-right-10">2013 © Metronic. ALL Rights Reserved.</span> 
-=======
                         <span class="margin-right-10">2013 © Finabao. ALL Rights Reserved.</span> 
->>>>>>> 93e80e4ea342a78e710558c04de9bedb0703267f
                         <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
                     </p>
                 </div>

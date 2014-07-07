@@ -242,19 +242,19 @@
           <div class="row" style="width:800px;float:right">
             <form action="#" class="form-horizontal">
                 <div class="form-body">
-                <h1 class="form-section">注册</h1>
+                <h2 class="form-section" style="height:40px">注册</h2>
                                                 <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="input-group margin-bottom-20">
                                                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                            <input type="text" class="form-control" placeholder="用户名" name="username">
+                                                            <input type="text" class="form-control" placeholder="用户名" name="username" style="width:250px">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="input-group margin-bottom-20">
                                                             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                                            <input type="text" class="form-control" placeholder="邮箱" name="email">
+                                                            <input type="text" class="form-control" placeholder="邮箱" name="email" style="width:250px">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -262,13 +262,13 @@
                                                     <div class="col-md-6">
                                                         <div class="input-group margin-bottom-20">
                                                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                                            <input type="password" class="form-control" placeholder="密码" name="password">
+                                                            <input type="password" class="form-control" placeholder="密码" name="password" style="width:250px">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="input-group margin-bottom-20">
                                                             <span class="input-group-addon"><i class="fa fa-apple"></i></span>
-                                                            <input type="text" class="form-control" placeholder="手机" name="mobile">
+                                                            <input type="text" class="form-control" placeholder="手机" name="mobile" style="width:250px">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -279,30 +279,23 @@
                                                     <div class="col-md-6">
                                                         <div class="input-group margin-bottom-20">
                                                             <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                                            <input type="password" class="form-control" placeholder="确认密码" name="password2">
+                                                            <input type="password" class="form-control" placeholder="确认密码" name="password2" style="width:250px">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="input-group margin-bottom-20">
                                                             <span class="input-group-addon"><i class="fa fa-android"></i></span>
-                                                            <input type="text" class="form-control" placeholder="手机验证码" name="mobilecode">
+                                                            <input type="text" class="form-control" placeholder="手机验证码" name="sign" style="width:200px">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!--/row-->
-                                            </div>
-                                            <div class="form-actions fluid">
                                                 <div class="row">
-                                                    <div class="col-md-6" style="float:right">
-                                                        <div class="col-md-offset-3 col-md-9">
-                                                            <button type="submit" class="btn green">注册</button>
-                                                            <button type="button" class="btn default">取消</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-6" style="margin-top:30px;padding-left:280px">
+                                                        <button type="submit" class="btn green btn-block" style="width:200px;height:40px;">提交注册</button>
                                                     </div>
                                                 </div>
-                                            </div>                       
+                </div>                                             
             </form>
             
           </div>

@@ -285,14 +285,15 @@
                                                     <div class="col-md-6">
                                                         <div class="input-group margin-bottom-20">
                                                             <span class="input-group-addon"><i class="fa fa-android"></i></span>
-                                                            <input type="text" class="form-control" placeholder="手机验证码" name="sign" style="width:200px">
+                                                            <input type="text" class="form-control" placeholder="手机验证码" name="sign" style="width:150px">
+                                                            <button class="btn green btn-info" type="button" style="position:absolute; top:0px; _position:relative; _height:34px; _top:-36px; _left:110px;" id="smscheck">短信验证码</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-6" style="margin-top:30px;padding-left:280px">
-                                                        <button type="submit" class="btn green btn-block" style="width:200px;height:40px;">提交注册</button>
+                                                        <button type="submit" class="btn green btn-info" style="width:200px;height:40px;">提交注册</button>
                                                     </div>
                                                 </div>
                 </div>                                             

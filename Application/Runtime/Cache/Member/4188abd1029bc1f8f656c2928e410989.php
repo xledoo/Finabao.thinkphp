@@ -63,7 +63,7 @@
                 </button>
                 <!-- END RESPONSIVE MENU TOGGLER -->
                 <!-- BEGIN LOGO (you can use logo image instead of text)-->
-                <a class="navbar-brand logo-v1" href="index.html">
+                <a class="navbar-brand logo-v1" href="<?php echo U('Home/Index/index');?>">
                     <img src="assets/img/logo_blue.png" id="logoimg" alt="">
                 </a>
                 <!-- END LOGO -->
@@ -323,7 +323,7 @@
                 <div class="create-account">
                     <p>
                          还没有账号 ?&nbsp;
-                        <a href="javascript:;" id="register-btn">
+                        <a href="<?php echo U('Member/Register/index');?>" id="register-btn">
                              注册用户
                         </a>
                     </p>

@@ -240,7 +240,8 @@
 <!-- BEGIN CONTAINER -->   
         <div class="container margin-bottom-40">
           <div class="row" style="width:800px;float:right">
-            <form action="#" class="form-horizontal">
+            <form action="<?php echo U('Member/Register/Submit');?>" method="post" class="form-horizontal">
+                <input type="hidden" name="formhash" value="<?php echo ($formhash); ?>">
                 <div class="form-body">
                 <h2 class="form-section" style="height:40px">注册</h2>
                                                 <!--/row-->
@@ -292,7 +293,7 @@
                                                 <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-6" style="margin-top:30px;padding-left:280px">
-                                                        <button type="submit" class="btn green btn-block" style="width:200px;height:40px;">提交注册</button>
+                                                    	<input type="submit" name="register" class="btn green btn-block" value="提交并注册">                                                    	
                                                     </div>
                                                 </div>
                 </div>                                             

@@ -316,4 +316,27 @@ function dmktime($date) {
 }
 
 
+
+function formhash($specialadd = '') {
+	return substr(md5(substr(NOW_TIME, 0, -7).C('GLOBAL_AUTH_KEY').$specialadd), 8, 8);
+}
+
+function zecho($array){
+	if(is_array($array)){
+		echo '<pre>';
+		print_r($array);
+		echo '</pre>';
+	} else {
+		echo $array;
+	}
+}
+
+function formcheck($subname){
+	return IS_POST && isset($_POST[$subname]) && $_POST['formhash'] == formhash() ? true : false;
+}
+
+function check_username($username){
+	$Model = D('Member');
+
+}
 ?>

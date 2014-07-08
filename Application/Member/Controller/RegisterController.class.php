@@ -8,7 +8,13 @@ class RegisterController extends Controller {
 
     //注册页面
     public function index(){
-    	if(IS_POST){
+    	$this->assign('formhash', formhash());
+    	$this->display();   	
+    }
+
+    //注册验证
+    public function Submit(){
+    	if(formcheck('register')){
     		$username	=	!empty($_POST['username']) ? I('username') : exit();
     		$password	=	!empty($_POST['password']) ? I('password') : exit();
     		$password2	=	!empty($_POST['password2']) ? I('password2') : exit();
@@ -16,12 +22,18 @@ class RegisterController extends Controller {
     		$mobile		=	!empty($_POST['mobile']) ? I('mobile') : exit();
     		$sign		=	!empty($_POST['sign']) ? I('sign') : exit();
 
+    		$Model	=	D('Member');
+    		if(!$Model->create()){
+    			exit($Model->getError());
 
-    	} else {
-    		$this->display();
+    		} else {
+    			echo 'OK';
+    			check_username($username);
+    			loaducenter();
+				uc_user_checkname($username);
+    		}
     	}
-
-    	
+    	exit();   	
     }
 
 }

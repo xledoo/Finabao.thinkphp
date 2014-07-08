@@ -1,33 +1,33 @@
-        <!-- BEGIN BREADCRUMBS -->   
-        <div class="row breadcrumbs margin-bottom-40">
-            <div class="container">
-                <div class="col-md-4 col-sm-4">
-                    <h1>Register 会员注册</h1>
-                </div>
-                <div class="col-md-8 col-sm-8">
+<!-- BEGIN BREADCRUMBS -->   
+    <div class="row breadcrumbs margin-bottom-40">
+        <div class="container">
+            <div class="col-md-4 col-sm-4">
+                <h1>Register 会员注册</h1>
+            </div>
+            <div class="col-md-8 col-sm-8">
                     <ul class="pull-right breadcrumb">
-                        <li><a href="{:U('Home/Index/Index')}">首页</a></li>
-                        <li><a href="{:U('Member/Index/Index')}">会员中心</a></li>
+                        <li><a href="{:U('Home/Index/index')}">首页</a></li>
+                        <li><a href="{:U('Member/Index/index')}">会员中心</a></li>
                         <li class="active">会员注册</li>
                     </ul>
-                </div>
             </div>
         </div>
-        <!-- END BREADCRUMBS -->
+    </div>
+<!-- END BREADCRUMBS -->
 
 
 <!-- BEGIN CONTAINER -->   
-        <div class="container margin-bottom-40">
+    <div class="container margin-bottom-40">
           <div class="row" style="width:800px;float:right">
             <form action="#" class="form-horizontal">
                 <div class="form-body">
-                <h2 class="form-section" style="height:40px">注册</h2>
+                <h2 class="form-section" style="height:40px">会员注册</h2>
                                                 <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="input-group margin-bottom-20">
                                                             <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                            <input type="text" class="form-control" placeholder="用户名" name="username" style="width:250px">
+                                                            <input type="text" class="form-control" placeholder="用户名" name="username" style="width:250px id="Lyp6Vq" style="width: 270px;height: 22px;" onblur="checkusername(this.id);" data-placement="top" title="用户名由 5 到 15 个字母或数字组成，不能包含符号或中文。" name="" class="form-control u-ipt" tabindex="1" autocomplete="off" size="25" maxlength="15" required ">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -63,7 +63,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="input-group margin-bottom-20">
-                                                            <span class="input-group-addon"><i class="fa fa-android"></i></span>
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
                                                             <input type="text" class="form-control" placeholder="手机验证码" name="sign" style="width:150px">
                                                             <button class="btn green btn-info" type="button" style="position:absolute; top:0px; _position:relative; _height:34px; _top:-36px; _left:110px;" id="smscheck">短信验证码</button>
                                                         </div>
@@ -77,10 +77,64 @@
                                                 </div>
                 </div>                                             
             </form>
-            
           </div>
         </div>
         <!-- END CONTAINER -->
+    </div>
+<!-- END PAGE CONTAINER -->
 
-  </div>
-    <!-- END PAGE CONTAINER -->
+<script type="text/javascript">
+jQuery(".form-control").each(function(i){
+if(jQuery(".form-control").eq(i).attr("title")){
+jQuery("#"+this.id).tooltip();
+}
+});
+
+jQuery("#smscheck").click(function(){
+var err =   0;
+jQuery(".control-group").each(function(i){
+if(i <= 4){
+if(!this.className.match(/ has-success/)){
+jQuery(".control-group input").eq(i).focus();
+err = 1;
+return false;
+}
+}
+});
+
+if(err == 0){
+var x = new Ajax();
+x.get('index.php?mod=ajax&inajax=yes&infloat=register&handlekey=register&ajaxmenu=1&action=sendsign&mobile=' + jQuery("#mobile").val(), function(s) {
+if(s == 'succeed') {
+$('chk_signcode').innerHTML = '验证短信已经发送成功，请等待。';
+jQuery("#smscheck").attr("disabled", "disabled");
+} else {
+$('chk_signcode').innerHTML = s;
+}
+});
+
+}
+});
+
+function checksign(id){
+errormessage(id);
+var signcode = trim($(id).value);
+var mobile   = trim($('mobile').value);
+//if(signcode.length == 6 && (/^[1-9]\d*$|^0$/.test(signcode))){
+var x = new Ajax();
+$('tip_' + id).parentNode.className = $('tip_' + id).parentNode.className.replace(/ p_right/, '');
+x.get('index.php?mod=ajax&inajax=yes&infloat=register&handlekey=register&ajaxmenu=1&action=checksign&mobile=' + jQuery("#mobile").val() +'&signcode=' + signcode, function(s) {
+errormessage(id, s);
+});
+//} else {
+//  errormessage(id, '短信验证码格式错误');
+//  return;
+//}
+}
+var ignoreEmail = false;
+addFormEvent('registerform', 0);
+function showBBRule() {
+showDialog($('layer_bbrule').innerHTML, 'info', '金融宝 网站服务条款');
+$('fwin_dialog_close').style.display = 'none';
+}
+</script>

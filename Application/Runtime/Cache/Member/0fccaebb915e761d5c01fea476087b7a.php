@@ -63,7 +63,7 @@
                 </button>
                 <!-- END RESPONSIVE MENU TOGGLER -->
                 <!-- BEGIN LOGO (you can use logo image instead of text)-->
-                <a class="navbar-brand logo-v1" href="index.html">
+                <a class="navbar-brand logo-v1" href="<?php echo U('Home/Index/index');?>">
                     <img src="assets/img/logo_blue.png" id="logoimg" alt="">
                 </a>
                 <!-- END LOGO -->
@@ -219,7 +219,23 @@
         </div>
     </div>
     <!-- END HEADER -->
-asdfsdf
+
+        <!-- BEGIN BREADCRUMBS -->   
+        <div class="row breadcrumbs margin-bottom-40">
+            <div class="container">
+                <div class="col-md-4 col-sm-4">
+                    <h1>Ucenter 会员中心</h1>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    <ul class="pull-right breadcrumb">
+                        <li><a href="<?php echo U('Home/Index/Index');?>">首页</a></li>
+                        <li><a href="<?php echo U('Member/Index/Index');?>">会员中心</a></li>
+                        <li class="active">会员中心</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- END BREADCRUMBS -->
 
 
     <!-- BEGIN FOOTER -->

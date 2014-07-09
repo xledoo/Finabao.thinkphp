@@ -44,7 +44,7 @@ class MemberModel extends Model {
 	}
 
 	function check_sign($data){
-
+		
 	}
 }
 

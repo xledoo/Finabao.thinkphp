@@ -294,7 +294,7 @@
                                                 <!--/row-->
                                                 <div class="row">
                                                     <div class="col-md-6" style="margin-top:30px;padding-left:280px">
-                                                    	<input type="submit" name="register" class="btn green btn-block" value="提交并注册">                                                    	
+                                                    	<input type="submit" name="register" class="btn green btn-block" value="提交并注册" id="register_submit">                                                    	
                                                     </div>
                                                 </div>
                 </div>                                             
@@ -306,59 +306,10 @@
 <!-- END PAGE CONTAINER -->
 
 <script type="text/javascript">
-jQuery(".form-control").each(function(i){
-if(jQuery(".form-control").eq(i).attr("title")){
-jQuery("#"+this.id).tooltip();
-}
-});
+jQuery("#register_submit").click(function(){
 
-jQuery("#smscheck").click(function(){
-var err =   0;
-jQuery(".control-group").each(function(i){
-if(i <= 4){
-if(!this.className.match(/ has-success/)){
-jQuery(".control-group input").eq(i).focus();
-err = 1;
-return false;
-}
-}
+    return false;
 });
-
-if(err == 0){
-var x = new Ajax();
-x.get('index.php?mod=ajax&inajax=yes&infloat=register&handlekey=register&ajaxmenu=1&action=sendsign&mobile=' + jQuery("#mobile").val(), function(s) {
-if(s == 'succeed') {
-$('chk_signcode').innerHTML = '验证短信已经发送成功，请等待。';
-jQuery("#smscheck").attr("disabled", "disabled");
-} else {
-$('chk_signcode').innerHTML = s;
-}
-});
-
-}
-});
-
-function checksign(id){
-errormessage(id);
-var signcode = trim($(id).value);
-var mobile   = trim($('mobile').value);
-//if(signcode.length == 6 && (/^[1-9]\d*$|^0$/.test(signcode))){
-var x = new Ajax();
-$('tip_' + id).parentNode.className = $('tip_' + id).parentNode.className.replace(/ p_right/, '');
-x.get('index.php?mod=ajax&inajax=yes&infloat=register&handlekey=register&ajaxmenu=1&action=checksign&mobile=' + jQuery("#mobile").val() +'&signcode=' + signcode, function(s) {
-errormessage(id, s);
-});
-//} else {
-//  errormessage(id, '短信验证码格式错误');
-//  return;
-//}
-}
-var ignoreEmail = false;
-addFormEvent('registerform', 0);
-function showBBRule() {
-showDialog($('layer_bbrule').innerHTML, 'info', '金融宝 网站服务条款');
-$('fwin_dialog_close').style.display = 'none';
-}
 </script>
 
 

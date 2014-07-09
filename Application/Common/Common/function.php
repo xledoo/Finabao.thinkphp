@@ -335,8 +335,7 @@ function formcheck($subname){
 	return IS_POST && isset($_POST[$subname]) && $_POST['formhash'] == formhash() ? true : false;
 }
 
-function check_username($username){
-	$Model = D('Member');
 
-}
+
+
 ?>

@@ -15,4 +15,10 @@ return array(
 	'DB_PORT'   			=> 3306, // 端口
 	'DB_PREFIX' 			=> 'pre_', // 数据库表前缀
 	'COOKIE_PRE'			=> 'sE8t_',
+
+
+	'SMS_USERNAME'			=>	'xledoo',
+	'SMS_PASSWORD'			=>	'zmin821001',
+	'SMS_CHARSET'			=>	'utf8',
+	'SMS_INTERFACE'			=>	'http://api.chanyoo.cn/{charset}/interface/send_sms.aspx?username={username}&password={password}&receiver={mobile}&content={message}',
 );

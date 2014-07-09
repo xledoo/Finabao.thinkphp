@@ -6,6 +6,7 @@ class RegisterController extends Controller {
 		loaducenter();
 	}
 
+    //注册页面
     public function index(){
     	if(IS_POST){
     		$username	=	!empty($_POST['username']) ? I('username') : exit();

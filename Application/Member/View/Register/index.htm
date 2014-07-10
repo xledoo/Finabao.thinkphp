@@ -1,94 +1,100 @@
-        <!-- BEGIN BREADCRUMBS -->   
-        <div class="row breadcrumbs margin-bottom-40">
-            <div class="container">
-                <div class="col-md-4 col-sm-4">
-                    <h1>Register 会员注册</h1>
-                </div>
-                <div class="col-md-8 col-sm-8">
+
+<!-- BEGIN BREADCRUMBS -->   
+    <div class="row breadcrumbs margin-bottom-40">
+        <div class="container">
+            <div class="col-md-4 col-sm-4">
+                <h1>Register 会员注册</h1>
+            </div>
+            <div class="col-md-8 col-sm-8">
                     <ul class="pull-right breadcrumb">
-                        <li><a href="{:U('Home/Index/Index')}">首页</a></li>
-                        <li><a href="{:U('Member/Index/Index')}">会员中心</a></li>
+                        <li><a href="{:U('Home/Index/index')}">首页</a></li>
+                        <li><a href="{:U('Member/Index/index')}">会员中心</a></li>
                         <li class="active">会员注册</li>
                     </ul>
-                </div>
             </div>
         </div>
-        <!-- END BREADCRUMBS -->
+    </div>
+<!-- END BREADCRUMBS -->
 
 
 <!-- BEGIN CONTAINER -->   
-        <div class="container margin-bottom-40">
-          <div class="row" style="width:800px;float:right">
-            <form action="#" class="form-horizontal">
-                <div class="form-body">
-                <h2 class="form-section" style="height:40px">注册</h2>
-                                                <!--/row-->
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="input-group margin-bottom-20">
-                                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                            <input type="text" class="form-control" placeholder="用户名" name="username" style="width:250px">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="input-group margin-bottom-20">
-                                                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                                            <input type="text" class="form-control" placeholder="邮箱" name="email" style="width:250px">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="input-group margin-bottom-20">
-                                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                                            <input type="password" class="form-control" placeholder="密码" name="password" style="width:250px">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="input-group margin-bottom-20">
-                                                            <span class="input-group-addon"><i class="fa fa-apple"></i></span>
-                                                            <input type="text" class="form-control" placeholder="手机" name="mobile" style="width:250px">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                    <!--/span-->
-                                                </div>
-                                                <!--/row-->
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="input-group margin-bottom-20">
-                                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                                            <input type="password" class="form-control" placeholder="确认密码" name="password2" style="width:250px">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="input-group margin-bottom-20">
-                                                            <span class="input-group-addon"><i class="fa fa-android"></i></span>
-<<<<<<< HEAD
-                                                            <input type="text" class="form-control" placeholder="手机验证码" name="sign" style="width:200px">
-=======
-                                                            <input type="text" class="form-control" placeholder="手机验证码" name="sign" style="width:150px">
-                                                            <button class="btn green btn-info" type="button" style="position:absolute; top:0px; _position:relative; _height:34px; _top:-36px; _left:110px;" id="smscheck">短信验证码</button>
->>>>>>> bece329e4f6add0b91724a2faec6c29b95c6915a
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--/row-->
-                                                <div class="row">
-                                                    <div class="col-md-6" style="margin-top:30px;padding-left:280px">
-<<<<<<< HEAD
-                                                        <button type="submit" class="btn green btn-block" style="width:200px;height:40px;">提交注册</button>
-=======
-                                                        <button type="submit" class="btn green btn-info" style="width:200px;height:40px;">提交注册</button>
->>>>>>> bece329e4f6add0b91724a2faec6c29b95c6915a
-                                                    </div>
-                                                </div>
-                </div>                                             
+    <div class="container margin-bottom-40">
+    	<!--/row-->
+        <div class="row">
+            <form action="{:U('Member/Register/Submit')}" id="register_form" method="post" class="form-horizontal">
+                <input type="hidden" name="formhash" value="{$formhash}">
+				<div class="col-md-4">
+					<div class="row">
+						<img src="assets/img/photos/img4.jpg">
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="input-group margin-bottom-20">
+			                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="用户名" nullmsg="请填写用户名" datatype="s5-15" errormsg="用户名至少5个字符,最多15个字符！" name="username" id="username" >
+			                </div>
+			            	<div class="input-group margin-bottom-20">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="密码" name="password" id="password" >
+			                </div>
+			                <div class="input-group margin-bottom-20">
+			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="确认密码" name="password2" id="password2">
+			                </div>
+						</div>
+						<div class="col-md-6">
+							<div class="input-group margin-bottom-20">
+			                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="邮箱" name="email" id="email">
+			                </div>
+			            	<div class="input-group margin-bottom-20">
+			                    <span class="input-group-addon"><i class="fa fa-apple"></i></span>
+			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="手机号码" name="mobile" id="mobile">
+			                </div>
+			                <div class="input-group margin-bottom-20">
+			                    <span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
+			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="短信验证码" name="sign" id="sign">
+			                    <span class="input-group-btn"><button class="btn btn-info green" type="button" style="position:absolute; top:0px; _position:relative; _height:34px; _top:-36px; _left:110px;" id="smscheck">短信验证码</button></span>
+			                </div>
+						</div>
+						<div class="col-md-12">
+						<input type="submit" class="btn btn-info green col-md-12" name="register" value="提交注册" id="register_submit">						</div>
+					</div>
+				</div>	            	
             </form>
-            
-          </div>
         </div>
-        <!-- END CONTAINER -->
+    </div>
+<!-- END CONTAINER -->
 
-  </div>
-    <!-- END PAGE CONTAINER -->
+<script type="text/javascript">
+function ajax_check(id, val){
+	jQuery.getJSON('index.php?m=member&c=register&a=ajax_check&type='+id+'&data='+val, function(json){
+		if(json['error'] == 0){
+			jQuery('#' + id).parentNode.className = jQuery('#' + id).parentNode.className.replace(/ has-seccuss/, '');
+		} else {
+			jQuery('#' + id).parentNode.className = jQuery('#' + id).parentNode.className.replace(/ has-error/, '');
+		}
+	});
+	return false;
+}
+jQuery("#register_form").submit(function(){
+	jQuery(".form-control").each(function(i){
+		if(this.id){
+			if(!this.className.match(/ has-success/)){
+				jQuery(".input-group input").eq(i).focus();
+				err = 1;
+				return false;
+			}
+		}
+	});
+	return false;	
+});
+
+</script>
+
+</div>
+<!-- END PAGE CONTAINER -->
+
+

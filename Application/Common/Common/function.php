@@ -307,6 +307,7 @@ function dgmdate($timestamp, $format = "Y-m-d H:i:s", $offset = 8, $convert = 1)
 	}
 }
 
+//日期转换为时间戳
 function dmktime($date) {
 	if(strpos($date, '-')) {
 		$time = explode('-', $date);
@@ -314,6 +315,30 @@ function dmktime($date) {
 	}
 	return 0;
 }
+
+
+//表单提交合法值生成
+function formhash($specialadd = '') {
+	return substr(md5(substr(NOW_TIME, 0, -7).C('GLOBAL_AUTH_KEY').$specialadd), 8, 8);
+}
+
+//变量打印
+function zecho($array){
+	if(is_array($array)){
+		echo '<pre>';
+		print_r($array);
+		echo '</pre>';
+	} else {
+		echo $array;
+	}
+}
+
+//表单提交功能验证
+function formcheck($subname){
+	return IS_POST && isset($_POST[$subname]) && $_POST['formhash'] == formhash() ? true : false;
+}
+
+
 
 
 ?>

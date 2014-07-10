@@ -306,7 +306,7 @@ jQuery("#register_form").submit(function(){
 	jQuery(".form-control").each(function(i){
 		if(this.id){
 			if(!this.className.match(/ has-success/)){
-				jQuery(".control-group input").eq(i).focus();
+				jQuery(".input-group input").eq(i).focus();
 				err = 1;
 				return false;
 			}

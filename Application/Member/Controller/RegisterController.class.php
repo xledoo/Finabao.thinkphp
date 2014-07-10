@@ -21,7 +21,11 @@ class RegisterController extends Controller {
     		} else {
                 loaducenter();
 
-
+                $result =   uc_user_register(I('username'), I('password'), I('email'));
+                if($result  >   0){
+                    // UC注册成功 进行下一步的本地数据操作
+                    // 且只有UC注册成功时进行下一步操作
+                }
     		}
     	}
     	$this->error('非法提交!');
@@ -37,7 +41,8 @@ class RegisterController extends Controller {
         
         /*查询是否发送过该号码，或该号码已经注册过*/
         $ckmobile = M('member_checkmobile');
-        if ($data['status'] == 0) {
+        // $data['status'] 是啥东西？ 没有见到哪里有初始化 $data数组的地方呀？
+        if($data['status'] == 0) {
             if($result = $SMS->SendSMS($mobile, $content, 'register')){
                 $checkModel =   M('member_checkmobile');
                 $data   =   array(
@@ -47,7 +52,7 @@ class RegisterController extends Controller {
                     'dateline'  =>  NOW_TIME   
                 );
                 if($checkModel->add($data)){
-                   unset($data['sign']);
+                    unset($data['sign']);
                     $smsModel   =   M('admincp_smsender');
                     $data['action'] =  'register';
                     $data['message'] =  $content;
@@ -57,6 +62,8 @@ class RegisterController extends Controller {
                     $this->ajaxReturn('短信验证码发送成功');                
                 }
             }
+
+            // 这里具体采用什么数据格式返回还要看前台需要
             $this->ajaxReturn('短信验证码发送失败'); 
         }
         $this->ajaxReturn('该号码已经发送过！');

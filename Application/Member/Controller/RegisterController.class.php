@@ -3,7 +3,7 @@ namespace Member\Controller;
 use Think\Controller;
 class RegisterController extends Controller {
 	public function _initialize(){
-		// $this->SMSend_verify('15924907828');
+		
 	}
 
     //注册页面
@@ -19,8 +19,9 @@ class RegisterController extends Controller {
     		if(!$Model->create()){
     			exit($Model->getError());
     		} else {
-                $Model->add();
-                $this->success('恭喜您，注册成功！');
+                loaducenter();
+
+
     		}
     	}
     	$this->error('非法提交!');
@@ -62,19 +63,14 @@ class RegisterController extends Controller {
         
     }
 
-    public function ajax_check_username($username){
+    public function ajax_check(){
+        $json['class']      =   'has-success';
+        $json['message']    =   '验证通过';
+        $json['error']      =   0;
+        $json['data']       =   I('data');
+        $json['type']       =   I('type');
+        exit(json_encode($json));
+    }
 
-    }
-    public function ajax_check_password($password, $password2){
-        
-    }
-    public function ajax_check_email($email){
-        
-    }
-    public function ajax_check_mobile($mobile){
-        
-    }
-    public function ajax_check_sign($mobile, $sign){
-        
-    }
+
 }

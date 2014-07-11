@@ -221,139 +221,120 @@
         </div>
     </div>
     <!-- END HEADER -->
-<!-- BEGIN BREADCRUMBS -->   
-    <div class="row breadcrumbs margin-bottom-40">
-        <div class="container">
-            <div class="col-md-4 col-sm-4">
-                <h1>Register 会员注册</h1>
-            </div>
-            <div class="col-md-8 col-sm-8">
+   <!-- BEGIN PAGE LEVEL PLUGIN STYLES --> 
+   <link href="assets/css/themes/login.css" rel="stylesheet" type="text/css"/>
+   <link href="assets/css/themes/login-soft.css" rel="stylesheet" type="text/css"/>
+   <link href="assets/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" /> 
+   <link href="assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>              
+   <!-- END PAGE LEVEL PLUGIN STYLES -->
+        <!-- BEGIN BREADCRUMBS -->   
+<div class="row breadcrumbs margin-bottom-10">
+            <div class="container">
+                <div class="col-md-4 col-sm-4">
+                    <h1>Login 会员登录</h1>
+                </div>
+                <div class="col-md-8 col-sm-8">
                     <ul class="pull-right breadcrumb">
-                        <li><a href="<?php echo U('Home/Index/index');?>">首页</a></li>
-                        <li><a href="<?php echo U('Member/Index/index');?>">会员中心</a></li>
-                        <li class="active">会员注册</li>
+                        <li><a href="<?php echo U('Home/Index/Index');?>">首页</a></li>
+                        <li><a href="<?php echo U('Member/Index/Index');?>">会员中心</a></li>
+                        <li class="active">会员登录</li>
                     </ul>
+                </div>
             </div>
-        </div>
-    </div>
-<!-- END BREADCRUMBS -->
-
-
-<!-- BEGIN CONTAINER -->   
-    <div class="container margin-bottom-40">
-    	<!--/row-->
-        <div class="row">
-            <form action="<?php echo U('Member/Register/Submit');?>" id="register_form" method="post" class="form-horizontal">
-                <input type="hidden" name="formhash" value="<?php echo ($formhash); ?>">
-				<div class="col-md-4">
-					<div class="row">
-						<img src="assets/img/photos/img4.jpg">
-					</div>
-				</div>
-				<div class="col-md-8">
-					<div class="row">
-						<div class="col-md-6">
-							<div class="input-group margin-bottom-20">
-			                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="用户名" nullmsg="请填写用户名" datatype="s5-15" errormsg="用户名至少5个字符,最多15个字符！" name="username" id="username" >
-			                </div>
-			            	<div class="input-group margin-bottom-20">
-			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-			                    <input type="password" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="密码" name="password" id="password" >
-			                </div>
-			                <div class="input-group margin-bottom-20">
-			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-			                    <input type="password" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="确认密码" name="password2" id="password2">
-			                </div>
-						</div>
-						<div class="col-md-6">
-							<div class="input-group margin-bottom-20">
-			                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="邮箱" name="email" id="email">
-			                </div>
-			            	<div class="input-group margin-bottom-20">
-			                    <span class="input-group-addon"><i class="fa fa-apple"></i></span>
-			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="手机号码" name="mobile" id="mobile">
-			                </div>
-			                <div class="input-group margin-bottom-20">
-			                    <span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
-			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="短信验证码" name="sign" id="sign">
-			                    <span class="input-group-btn"><button class="btn btn-info green" type="button" style="position:absolute; top:0px; _position:relative; _height:34px; _top:-36px; _left:110px;" id="smscheck">短信验证码</button></span>
-			                </div>
-						</div>
-						<div class="col-md-12">
-						<input type="submit" class="btn btn-info green col-md-12" name="register" value="提交注册" id="register_submit">						</div>
-					</div>
-				</div>	            	
-            </form>
-        </div>
-    </div>
-<!-- END CONTAINER -->
-
-<script type="text/javascript">
-function ajax_check(id, val){
-	jQuery.getJSON('index.php?m=member&c=register&a=ajax_check&type='+id+'&data='+val, function(json){
-		var pre = jQuery("#" + id).parent().attr('class');
-
-		if(json['error'] == 0){
-			//jQuery('#' + id)[0].parentNode.className = jQuery('#' + id)[0].parentNode.className.replace(json['class']);
-			jQuery("#" + id).parent().toggleClass(json['class'])
-			
-			// var aft = pre + json['class'];
-
-			// alert(aft);
-			// alert(jQuery("#" + id)[0].parentNode.className);
-			
-
-			//二次密码确认
-			if(id == 'password2'){
-				// alert(json['data']);exit();
-				if(json['data'] == jQuery("#password").val()){
-					alert('密码确认成功！');
-				} else {
-					aft = pre + ' has-error';
-					alert(aft);
-					alert('两次密码不一致！');
-
-				}
-			}
-			
-			alert(json['message']);
-		} else {
-			// jQuery('#' + id)[0].parentNode.className = jQuery('#' + id)[0].parentNode.className.replace(json['class']);
-
-			jQuery("#" + id).parent().toggleClass(json['class']);
-
-			var aft = pre + json['class'];
-
-			alert(aft);
-			// alert(jQuery("#" + id).parent().attr("class"));
-			// alert(jQuery("#" + id)[0].parentNode.className);
-			alert(json['message']);
-		}
-
-		
-	});
-	return false;
-}
-jQuery("#register_form").submit(function(){
-	jQuery(".form-control").each(function(i){
-		if(this.id){
-			if(!this.className.match(/ has-success/)){
-				jQuery(".input-group input").eq(i).focus();
-				err = 1;
-				return false;
-			}
-		}
-	});
-	return false;	
-});
-
-</script>
-
 </div>
-<!-- END PAGE CONTAINER -->
+        <!-- END BREADCRUMBS -->
+    <!-- BEGIN CONTAINER -->   
+<div class="login">
+       <!-- <div class="logo">
+            <a href="index.html">
+                <img src="assets/img/logo-big.png" alt=""/>
+            </a>
+        </div>-->
+        <!-- END LOGO -->
+        <!-- BEGIN LOGIN -->
+        <div class="content">
+            <!-- BEGIN LOGIN FORM -->
+            <form class="login-form" action="index.html" method="post">
+                <h3 class="form-title">会员登录</h3>
+               <!-- <div class="alert alert-danger display-hide">
+                    <button class="close" data-close="alert"></button>
+                    <span>
+                         输入您的账号和密码.
+                    </span>
+                </div>-->
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">用户名</label>
+                    <div class="input-icon">
+                        <i class="fa fa-user"></i>
+                        <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="输入用户名" name="username"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">密码</label>
+                    <div class="input-icon">
+                        <i class="fa fa-lock"></i>
+                        <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="输入密码" name="password"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">安全码</label>
+                    <div class="input-icon">
+                        <i class="fa fa-key"></i>
+                        <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="请输入安全码" name="password"/>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <label class="checkbox">
+                        <input type="checkbox" name="remember" value="1"/> 记住密码 
+                    </label>
+                    <div class="forget-password">
+                        <a href="javascript:;" id="forget-password">忘记密码？</a>
+                    </div>
+                </div>
+                    
+                <div>
+                    <button type="submit" class="btn blue pull-center">
+                    登录 <i class="m-icon-swapright m-icon-white"></i>
+                    </button>
 
+                </div>
+                
+                <!--<div class="login-options">
+                    <h4>合作用户登录</h4>
+                    <ul class="social-icons">
+                        <li>
+                            <a class="facebook" data-original-title="facebook" href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="twitter" data-original-title="Twitter" href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="googleplus" data-original-title="Goole Plus" href="#">
+                            </a>
+                        </li>
+                        <li>
+                            <a class="linkedin" data-original-title="Linkedin" href="#">
+                            </a>
+                        </li>
+                    </ul>
+                </div>-->
+                
+                <div class="create-account">
+                    <p>
+                         还没有账号 ?&nbsp;
+                        <a href="<?php echo U('Member/Register/index');?>" id="register-btn">
+                             注册用户
+                        </a>
+                    </p>
+                </div>
+            </form>
+            <!-- END LOGIN FORM -->
+        </div>
+</div>
+    <!-- END CONTAINER -->
 
 
 

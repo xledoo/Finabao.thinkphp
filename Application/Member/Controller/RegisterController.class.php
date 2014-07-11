@@ -64,11 +64,97 @@ class RegisterController extends Controller {
     }
 
     public function ajax_check(){
-        $json['class']      =   'has-success';
-        $json['message']    =   '验证通过';
-        $json['error']      =   0;
-        $json['data']       =   I('data');
+        // $json['class']      =   'has-success';
+        // $json['message']    =   '验证通过';
+        // $json['error']      =   0;
         $json['type']       =   I('type');
+        $json['data']       =   I('data');
+        
+        $u = "/^[a-zA-Z][a-zA-Z0-9_]{5,14}$/";
+        $p = "/^[a-zA-Z0-9_]{6,32}$/";
+        $e = "/w+([-+.]w+)*@w+([-.]w+)*.w+([-.]w+)*/";
+        //$e = "/w+@w+([-.]w+)*.w+([-.]w+)*/";
+        $m = "/^1[3|4|5|8]{1}[0-9]{9}$/";
+        $s = "/^d{6}$/";
+
+        //前台输入数据格式验证
+        // if(preg_match($u, I('data')) == 0){
+        //     $json['error'] = 1;
+        //     $json['message'] = '用户名格式不正确，请重试！';
+        // } elseif (preg_match($e, I('data')) == 0) {
+        //     $json['error'] = 1;
+        //     $json['message'] = '邮箱格式不正确，请重试！';
+        // } elseif (preg_match($m, I('data')) == 0) {
+        //     $json['error'] = 1;
+        //     $json['message'] = '手机号码不正确，请重试！';
+        // } elseif (preg_match($s, I('data')) == 0) {
+        //     $json['error'] = 1;
+        //     $json['message'] = '短信验证码格式不正确，请重试！';
+        // } else{
+        //     $json['error'] = 0;
+        //     $json['message'] = '可以注册!';
+        // }
+
+        if(I('type') == 'username'){
+            if(preg_match($u, I('data')) == 0){
+                $json['class']      =   ' has-error';
+                $json['error'] = 1;
+                $json['message'] = '用户名必须以字母开头，6-15个数字字母下划线组成，不能为中文字符！';
+            } else {
+                $json['class']      =   ' has-success';
+                $json['error'] = 0;
+                $json['message'] = '可以注册!';
+            }
+        }
+
+        if(I('type') == 'password' || 'password2'){
+            if(preg_match($p, I('data')) == 0){
+                $json['class']      =   ' has-error';
+                $json['error'] = 1;
+                $json['message'] = '密码必须6-32个数字字母下划线组成，不能为中文字符！！';
+            } else {
+                $json['class']      =   ' has-success';
+                $json['error'] = 0;
+                $json['message'] = '可以注册!';
+            }
+        }
+
+        if(I('type') == 'email'){
+            if(preg_match($e, I('data')) == 0){
+                $json['class']      =   ' has-error';
+                $json['error'] = 1;
+                $json['message'] = '邮箱格式不正确，请重试！';
+            } else {
+                $json['class']      =   ' has-success';
+                $json['error'] = 0;
+                $json['message'] = '可以注册!';
+            }
+        }
+
+        if(I('type') == 'mobile'){
+            if(preg_match($m, I('data')) == 0){
+                $json['class']      =   ' has-error';
+                $json['error'] = 1;
+                $json['message'] = '手机号码格式非法，请重试！';
+            } else {
+                $json['class']      =   ' has-success';
+                $json['error'] = 0;
+                $json['message'] = '可以注册!';
+            }
+        }
+
+        if(I('type') == 'sign'){
+            if(preg_match($s, I('data')) == 0){
+                $json['class']      =   ' has-error';
+                $json['error'] = 1;
+                $json['message'] = '短信验证码不正确，请重试！';
+            } else {
+                $json['class']      =   ' has-success';
+                $json['error'] = 0;
+                $json['message'] = '可以注册!';
+            }
+        }
+
         exit(json_encode($json));
     }
 

@@ -260,11 +260,11 @@
 			                </div>
 			            	<div class="input-group margin-bottom-20">
 			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="密码" name="password" id="password" >
+			                    <input type="password" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="密码" name="password" id="password" >
 			                </div>
 			                <div class="input-group margin-bottom-20">
 			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="确认密码" name="password2" id="password2">
+			                    <input type="password" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="确认密码" name="password2" id="password2">
 			                </div>
 						</div>
 						<div class="col-md-6">
@@ -294,11 +294,46 @@
 <script type="text/javascript">
 function ajax_check(id, val){
 	jQuery.getJSON('index.php?m=member&c=register&a=ajax_check&type='+id+'&data='+val, function(json){
+		var pre = jQuery("#" + id).parent().attr('class');
+
 		if(json['error'] == 0){
-			jQuery('#' + id).parentNode.className = jQuery('#' + id).parentNode.className.replace(/ has-seccuss/, '');
+			//jQuery('#' + id)[0].parentNode.className = jQuery('#' + id)[0].parentNode.className.replace(json['class']);
+			jQuery("#" + id).parent().toggleClass(json['class'])
+			
+			// var aft = pre + json['class'];
+
+			// alert(aft);
+			// alert(jQuery("#" + id)[0].parentNode.className);
+			
+
+			//二次密码确认
+			if(id == 'password2'){
+				// alert(json['data']);exit();
+				if(json['data'] == jQuery("#password").val()){
+					alert('密码确认成功！');
+				} else {
+					aft = pre + ' has-error';
+					alert(aft);
+					alert('两次密码不一致！');
+
+				}
+			}
+			
+			alert(json['message']);
 		} else {
-			jQuery('#' + id).parentNode.className = jQuery('#' + id).parentNode.className.replace(/ has-error/, '');
+			// jQuery('#' + id)[0].parentNode.className = jQuery('#' + id)[0].parentNode.className.replace(json['class']);
+
+			jQuery("#" + id).parent().toggleClass(json['class']);
+
+			var aft = pre + json['class'];
+
+			alert(aft);
+			// alert(jQuery("#" + id).parent().attr("class"));
+			// alert(jQuery("#" + id)[0].parentNode.className);
+			alert(json['message']);
 		}
+
+		
 	});
 	return false;
 }
@@ -306,7 +341,7 @@ jQuery("#register_form").submit(function(){
 	jQuery(".form-control").each(function(i){
 		if(this.id){
 			if(!this.className.match(/ has-success/)){
-				jQuery(".control-group input").eq(i).focus();
+				jQuery(".input-group input").eq(i).focus();
 				err = 1;
 				return false;
 			}

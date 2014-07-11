@@ -260,11 +260,11 @@
 			                </div>
 			            	<div class="input-group margin-bottom-20">
 			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="密码" name="password" id="password" >
+			                    <input type="password" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="密码" name="password" id="password" >
 			                </div>
 			                <div class="input-group margin-bottom-20">
 			                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="确认密码" name="password2" id="password2">
+			                    <input type="password" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="确认密码" name="password2" id="password2">
 			                </div>
 						</div>
 						<div class="col-md-6">
@@ -279,7 +279,7 @@
 			                <div class="input-group margin-bottom-20">
 			                    <span class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></span>
 			                    <input type="text" class="form-control" onblur="ajax_check(this.id, this.value);" placeholder="短信验证码" name="sign" id="sign">
-			                    <span class="input-group-btn"><button class="btn btn-info green" type="button" style="position:absolute; top:0px; _position:relative; _height:34px; _top:-36px; _left:110px;" id="smscheck">短信验证码</button></span>
+			                    <span class="input-group-btn"><button class="btn btn-info green" type="button" style="position:absolute; top:0px; _position:relative; _height:34px; _top:-36px; _left:110px;" id="smscheck" data-loading-text="正在发送...">短信验证码</button></span>
 			                </div>
 						</div>
 						<div class="col-md-12">
@@ -294,10 +294,11 @@
 <script type="text/javascript">
 function ajax_check(id, val){
 	jQuery.getJSON('index.php?m=member&c=register&a=ajax_check&type='+id+'&data='+val, function(json){
-		if(json['error'] == 0){
-			jQuery('#' + id).parentNode.className = jQuery('#' + id).parentNode.className.replace(/ has-seccuss/, '');
-		} else {
-			jQuery('#' + id).parentNode.className = jQuery('#' + id).parentNode.className.replace(/ has-error/, '');
+		if(json['error'] == 1){
+			//jQuery('#' + id).parentNode.className = jQuery('#' + id).parentNode.className.replace('','has-seccuss');
+		  alert(json['message']);
+        } else {
+			alert(json['message']);
 		}
 	});
 	return false;
@@ -314,6 +315,16 @@ jQuery("#register_form").submit(function(){
 	});
 	return false;	
 });
+
+// //发送短信按钮
+
+//   $('#smscheck').click(function () {
+//     var btn = $(this)
+//     btn.button('loading')
+//     $.ajax(...).always(function () {
+//       btn.button('reset')
+//     });
+//   });
 
 </script>
 

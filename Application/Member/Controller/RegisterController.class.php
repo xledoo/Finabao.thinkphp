@@ -54,6 +54,7 @@ class RegisterController extends Controller {
                     $data['status'] =  ($result['result'] != 0) ? 1 : 0;
                     $data['result'] =  $result['message'];
                     $smsModel->add($data);
+                    $s == 'succeed';
                     $this->ajaxReturn('短信验证码发送成功');                
                 }
             }
@@ -70,12 +71,12 @@ class RegisterController extends Controller {
         $json['type']       =   I('type');
         $json['data']       =   I('data');
         
-        $u = "/^[a-zA-Z][a-zA-Z0-9_]{5,14}$/";
-        $p = "/^[a-zA-Z0-9_]{6,32}$/";
-        $e = "/w+([-+.]w+)*@w+([-.]w+)*.w+([-.]w+)*/";
+        $u = "/^[\w]{6,15}$/";
+        $p = "/^[\w]{6,32}$/";
+        $e = "/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/";
         //$e = "/w+@w+([-.]w+)*.w+([-.]w+)*/";
         $m = "/^1[3|4|5|8]{1}[0-9]{9}$/";
-        $s = "/^d{6}$/";
+        $s = "/^\d{6}$/";
 
         //前台输入数据格式验证
         // if(preg_match($u, I('data')) == 0){
@@ -95,6 +96,7 @@ class RegisterController extends Controller {
         //     $json['message'] = '可以注册!';
         // }
 
+        //用户名
         if(I('type') == 'username'){
             if(preg_match($u, I('data')) == 0){
                 $json['class']      =   ' has-error';
@@ -103,10 +105,11 @@ class RegisterController extends Controller {
             } else {
                 $json['class']      =   ' has-success';
                 $json['error'] = 0;
-                $json['message'] = '可以注册!';
+                $json['message'] = '信息通过!';
             }
         }
 
+        //密码
         if(I('type') == 'password' || 'password2'){
             if(preg_match($p, I('data')) == 0){
                 $json['class']      =   ' has-error';
@@ -115,10 +118,11 @@ class RegisterController extends Controller {
             } else {
                 $json['class']      =   ' has-success';
                 $json['error'] = 0;
-                $json['message'] = '可以注册!';
+                $json['message'] = '信息通过!';
             }
         }
 
+        //邮箱
         if(I('type') == 'email'){
             if(preg_match($e, I('data')) == 0){
                 $json['class']      =   ' has-error';
@@ -127,10 +131,11 @@ class RegisterController extends Controller {
             } else {
                 $json['class']      =   ' has-success';
                 $json['error'] = 0;
-                $json['message'] = '可以注册!';
+                $json['message'] = '信息通过!';
             }
         }
 
+        //手机号码
         if(I('type') == 'mobile'){
             if(preg_match($m, I('data')) == 0){
                 $json['class']      =   ' has-error';
@@ -139,10 +144,11 @@ class RegisterController extends Controller {
             } else {
                 $json['class']      =   ' has-success';
                 $json['error'] = 0;
-                $json['message'] = '可以注册!';
+                $json['message'] = '信息通过!';
             }
         }
 
+        //短信码
         if(I('type') == 'sign'){
             if(preg_match($s, I('data')) == 0){
                 $json['class']      =   ' has-error';
@@ -151,13 +157,21 @@ class RegisterController extends Controller {
             } else {
                 $json['class']      =   ' has-success';
                 $json['error'] = 0;
-                $json['message'] = '可以注册!';
+                $json['message'] = '信息通过!';
             }
         }
 
         exit(json_encode($json));
     }
 
-
+    public function sms_check(){
+        $json['type']       =   I('type');
+        $json['data']       =   I('data');
+        $ckm = M('member_checkmobile');
+        if($ckm->where('sign' == I('data'))->select()){
+            $json['error'] = 0;
+            $json['message'] = '短信验证码确认成功!';
+        }
+    }
 }
 
